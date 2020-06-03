@@ -10,7 +10,7 @@ Create a console-based application in C# which implements a singly linked list. 
 
 The application should be able to get the path to the file as an argument when executed from the command line.
 
-The application should be able to expect two types of commands when it parses the input text file separated by new lines.
+The application should be able to expect two types of commands. These commands should be parsed and executed sequentially when it parses the input text file. Each command will be separated by new lines.
 
 **Insert i:<value>**
 
