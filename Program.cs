@@ -55,12 +55,26 @@ namespace CSharpTest
         }
 
         public void printList() {
-            LinkedListNode currentNode = First;
+            if (First is null && Last is null)
+                System.Console.WriteLine("List is empty.");
+            else 
+            {
+                int currentNodeNum = 1;
+
+                LinkedListNode currentNode = First;
 
 
-        }
+                while (currentNode is not null) 
+                {
+                    System.Console.WriteLine($"Node{currentNodeNum}:{currentNode.Data}");
 
-    }
+                    // Iterate to the next node
+                    currentNode = currentNode.Next;
+                    currentNodeNum += 1;
+                } // while
+            } // else
+        } // printList
+    } // LinkedList
 
 
     class Program
@@ -90,7 +104,7 @@ namespace CSharpTest
                 LinkedList linkedList = new LinkedList();
 
 
-                // Assign the next line of the file to line. If it isn't null, then...
+                // Assign the next line of the file to line. If it isn't null, then:
                 while((line = inputFile.ReadLine()) != null)  
                 {  
                     string[] operationAndValue = line.Split(":");
@@ -124,7 +138,7 @@ namespace CSharpTest
                 linkedList.printList();
 
                 inputFile.Close();  
-                
+
                 return 0;
             }
         }
