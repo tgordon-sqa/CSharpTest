@@ -1,6 +1,20 @@
 # CSharpTest
 Tyler Gordon  
 
+
+# References  
+
+- https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/hello-world
+- https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line
+- https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time
+
+
+
+
+
+
+
+
 # Purpose
 To quickly test a candidate’s ability to program in C#. This exercise will require a basic understanding of the linked list data structure, algorithms, recursion, and/or control loops in C#
 # Exercise
