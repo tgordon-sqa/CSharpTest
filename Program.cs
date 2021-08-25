@@ -2,7 +2,6 @@
 
 namespace CSharpTest
 {
-
     class LinkedListNode
     {
         public int Data;
@@ -11,7 +10,7 @@ namespace CSharpTest
         public LinkedListNode(int data) {
             Data = data;
         }
-    }
+    } // LinkedListNode
 
     class LinkedList
     {
@@ -112,14 +111,13 @@ namespace CSharpTest
 
     class Program
     { 
-
+        // This method is called when an invalid input format is detected.
         static void inputFormatError(string line) {
             System.Console.WriteLine($"Invalid input line: {line}");
         }
 
         static int Main(string[] args)
         {
-
             // Check for an input file argument
             if (args.Length != 1)
             {
@@ -140,12 +138,18 @@ namespace CSharpTest
                 // Assign the next line of the file to line. If it isn't null, then:
                 while((line = inputFile.ReadLine()) != null)  
                 {  
-                    string[] operationAndValue = line.Split(":");
-                    string operation = operationAndValue[0];
-                    string strValue = operationAndValue[1];
-
                     try
                     {
+                        string[] operationAndValue = line.Split(":");
+                        if (operationAndValue.Length != 2)
+                        {
+                            inputFormatError(line);
+                            return 1;
+                        }
+
+                        string operation = operationAndValue[0];
+                        string strValue = operationAndValue[1];
+
                         int value = Int32.Parse(strValue);
 
                         if (operation == "i")
