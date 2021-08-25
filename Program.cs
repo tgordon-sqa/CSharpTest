@@ -27,7 +27,7 @@ namespace CSharpTest
         // Empty constructor
         public LinkedList() { }
 
-        public void addNode(int data) {
+        public void appendNode(int data) {
             // Create node
             LinkedListNode newNode = new LinkedListNode(data);
 
@@ -49,8 +49,41 @@ namespace CSharpTest
 
         }
 
-        public void deleteNode(int value) {
-            System.Console.WriteLine($"TODO: Delete node with value {value}");
+        public void deleteFirstNodeWithValue(int deleteValue) {
+            if (First is null && Last is null)
+                System.Console.WriteLine("Cannot delete from an empty list.");
+
+            else
+            {
+                LinkedListNode currentNode = First;
+                LinkedListNode prevNode = null;
+
+                while (currentNode is not null) 
+                {
+                    if (currentNode.Data == deleteValue)
+                    {
+                        // If there is a previous Node:
+                        if (prevNode is not null)
+                            // Set previous Node's next to the Node-to-be-deleted's next.
+                            prevNode.Next = currentNode.Next;
+                        // Else the node being deleted is the first node:
+                        else
+                            First = currentNode.Next;
+
+                        // TODO: Verify the if above covers the case of deleting the last node.
+
+                        // Only delete the first instance of the value.
+                        break;
+                    } // if
+
+                    else
+                        // Iterate to the next node
+                        prevNode = currentNode;
+                        currentNode = currentNode.Next;
+                } // while
+            } // else
+
+
 
         }
 
@@ -62,7 +95,6 @@ namespace CSharpTest
                 int currentNodeNum = 1;
 
                 LinkedListNode currentNode = First;
-
 
                 while (currentNode is not null) 
                 {
@@ -116,10 +148,10 @@ namespace CSharpTest
                         int value = Int32.Parse(strValue);
 
                         if (operation == "i")
-                            linkedList.addNode(value);
+                            linkedList.appendNode(value);
 
                         else if (operation == "d")
-                            linkedList.deleteNode(value);
+                            linkedList.deleteFirstNodeWithValue(value);
 
                         else 
                         {
@@ -140,7 +172,7 @@ namespace CSharpTest
                 inputFile.Close();  
 
                 return 0;
-            }
-        }
-    }
-}
+            } // else
+        } // Main
+    } // Program
+} // CSharpTest
