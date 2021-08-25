@@ -1,14 +1,30 @@
 # CSharpTest
 Tyler Gordon  
 
+# Environment
+Tested with .NET 5.0 SDK (v5.0.400) - Windows x64.  
+
+
+# How to run
+
+> dotnet run input.txt
+
 
 # References  
 
 - https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/hello-world
 - https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line
+- https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code
 - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time
-
-
+- https://docs.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split
+- https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
+- https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/passing-reference-type-parameters#passing-reference-types-by-reference
+- https://www.geeksforgeeks.org/ref-in-c-sharp/
+- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/true-false-operators
+- https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers
+- https://social.msdn.microsoft.com/Forums/ie/en-US/8efeffad-2bca-45d8-bcd9-453d39654267/noninvocable-member-cannot-be-used-like-a-method?forum=csharpgeneral
+- https://stackoverflow.com/questions/6253551/c-sharp-reference-member-variable
+- https://stackoverflow.com/questions/2980463/how-do-i-assign-by-reference-to-a-class-field-in-c 
 
 
 
