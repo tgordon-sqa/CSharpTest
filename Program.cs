@@ -39,13 +39,11 @@ namespace CSharpTest
                 // Update Last 
                 Last = newNode;
             }
-
-
-        }
+        } // appendNode
 
         public void deleteFirstNodeWithValue(int deleteValue) {
             if (First is null && Last is null)
-                System.Console.WriteLine("Cannot delete from an empty list.");
+                System.Console.WriteLine($"Cannot delete {deleteValue} from an empty list.");
 
             else
             {
@@ -81,7 +79,11 @@ namespace CSharpTest
                         // Iterate to the next node
                         prevNode = currentNode;
                         currentNode = currentNode.Next;
-                    }
+
+                        // If the value was not present in the list:
+                        if (currentNode is null)
+                            System.Console.WriteLine($"Cannot delete {deleteValue} because it does not currently exist in the list.");
+                    } // else
                 } // while
             } // else
         } // deleteFirstNodeWithValue
