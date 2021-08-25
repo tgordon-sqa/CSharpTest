@@ -61,9 +61,16 @@ namespace CSharpTest
                             // Set previous Node's next to the Node-to-be-deleted's next.
                             prevNode.Next = currentNode.Next;
                         
-                        // Else the node being deleted is the first node:
+                        // Else the node being deleted is the first Node:
                         else
+                        {
+                            // If the list only has 1 Node, then clear Last too.
+                            if (First == Last)
+                                Last = null;
+
                             First = currentNode.Next;
+                            // If the list has length 1, currentNode.Next will be null, which is desired in that case.
+                        } // else
 
                         // Only delete the first instance of the value.
                         break;
@@ -77,10 +84,7 @@ namespace CSharpTest
                     }
                 } // while
             } // else
-
-
-
-        }
+        } // deleteFirstNodeWithValue
 
         public void printList() {
             if (First is null && Last is null)
