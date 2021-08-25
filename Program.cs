@@ -8,15 +8,9 @@ namespace CSharpTest
         public int Data;
         public LinkedListNode Next;
 
-
         public LinkedListNode(int data) {
             Data = data;
         }
-
-        public void setNext(ref LinkedListNode next) {
-            Next = next;
-        }
-
     }
 
     class LinkedList
@@ -66,20 +60,21 @@ namespace CSharpTest
                         if (prevNode is not null)
                             // Set previous Node's next to the Node-to-be-deleted's next.
                             prevNode.Next = currentNode.Next;
+                        
                         // Else the node being deleted is the first node:
                         else
                             First = currentNode.Next;
-
-                        // TODO: Verify the if above covers the case of deleting the last node.
 
                         // Only delete the first instance of the value.
                         break;
                     } // if
 
                     else
+                    {
                         // Iterate to the next node
                         prevNode = currentNode;
                         currentNode = currentNode.Next;
+                    }
                 } // while
             } // else
 
